@@ -13,11 +13,12 @@
 
     <div class="cont">
             <div v-for="article in articles" class="card">
-                <img class = "card-image-top" :src="article.urlToImage" width=300 height=200>
+                <img class = "card-image-top" :src="article.urlToImage" width=298 height=200>
                     <div class="card-body">
 
                             <h5 class="card-title">{{ article.title }}</h5>
                             <p class="card-text">{{article.description}}</p>
+                            <a class ="btn btn-primary btn-sm" :href="article.url">Visit Page</a>
                       
                     </div>
             </div> 
@@ -25,6 +26,7 @@
 </template> 
 
 <script> 
+
     export default {   
         data() {     
             return {
@@ -74,10 +76,13 @@
 .card{
     width: 300px;
     margin-top: 20px;
+    
 }
 .cont{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
+
+
 </style>
